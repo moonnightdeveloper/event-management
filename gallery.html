@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - EventPro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-calendar-alt me-2"></i>EventPro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="event-grid.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p class="lead">A visual journey through our most memorable events</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="gallery-filters">
+                        <button class="filter-btn active" data-filter="all">All Events</button>
+                        <button class="filter-btn" data-filter="wedding">Weddings</button>
+                        <button class="filter-btn" data-filter="corporate">Corporate</button>
+                        <button class="filter-btn" data-filter="concert">Concerts</button>
+                        <button class="filter-btn" data-filter="private">Private Parties</button>
+                        <button class="filter-btn" data-filter="conference">Conferences</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="pb-5">
+        <div class="container">
+            <div class="row gallery-grid">
+                <!-- Wedding Events -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wedding">
+                    <img src="https://via.placeholder.com/400x300/4e54c8/ffffff?text=Wedding+Event" alt="Elegant Wedding" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Elegant Garden Wedding</h4>
+                            <p>Sarah & Michael's beautiful outdoor celebration</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/4e54c8/ffffff?text=Wedding+Event" data-title="Elegant Garden Wedding" data-description="Sarah & Michael's beautiful outdoor celebration with 200 guests">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wedding">
+                    <img src="https://via.placeholder.com/400x300/8f94fb/ffffff?text=Beach+Wedding" alt="Beach Wedding" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Befront Wedding</h4>
+                            <p>Jessica & David's romantic beach ceremony</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/8f94fb/ffffff?text=Beach+Wedding" data-title="Beach Wedding" data-description="Jessica & David's romantic beach ceremony at sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Corporate Events -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="corporate">
+                    <img src="https://via.placeholder.com/400x300/ff6b6b/ffffff?text=Product+Launch" alt="Product Launch" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Tech Product Launch</h4>
+                            <p>InnovateTech's flagship product reveal</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/ff6b6b/ffffff?text=Product+Launch" data-title="Tech Product Launch" data-description="InnovateTech's flagship product reveal with 500 attendees">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="corporate">
+                    <img src="https://via.placeholder.com/400x300/4ecdc4/ffffff?text=Corporate+Gala" alt="Corporate Gala" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Annual Corporate Gala</h4>
+                            <p>Global Corp's black-tie awards night</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/4ecdc4/ffffff?text=Corporate+Gala" data-title="Annual Corporate Gala" data-description="Global Corp's black-tie awards night with 300 executives">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Concert Events -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="concert">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x300/45b7d1/ffffff?text=Music+Festival" alt="Music Festival" class="gallery-image">
+                        <div class="video-play" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Summer Music Festival</h4>
+                            <p>3-day outdoor festival with 20+ artists</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="concert">
+                    <img src="https://via.placeholder.com/400x300/96ceb4/ffffff?text=Live+Concert" alt="Live Concert" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Arena Concert Tour</h4>
+                            <p>Major artist sold-out performance</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/96ceb4/ffffff?text=Live+Concert" data-title="Arena Concert Tour" data-description="Major artist sold-out performance for 15,000 fans">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Private Parties -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="private">
+                    <img src="https://via.placeholder.com/400x300/feca57/ffffff?text=Birthday+Party" alt="Birthday Party" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Milestone Birthday</h4>
+                            <p>Elegant 50th birthday celebration</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/feca57/ffffff?text=Birthday+Party" data-title="Milestone Birthday" data-description="Elegant 50th birthday celebration with custom decorations">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="private">
+                    <img src="https://via.placeholder.com/400x300/ff9ff3/ffffff?text=Anniversary" alt="Anniversary Party" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Golden Anniversary</h4>
+                            <p>50 years of marriage celebration</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/ff9ff3/ffffff?text=Anniversary" data-title="Golden Anniversary" data-description="50 years of marriage celebration with family and friends">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Conference Events -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="conference">
+                    <img src="https://via.placeholder.com/400x300/54a0ff/ffffff?text=Tech+Conference" alt="Tech Conference" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Annual Tech Conference</h4>
+                            <p>3-day event with 100+ speakers</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/54a0ff/ffffff?text=Tech+Conference" data-title="Annual Tech Conference" data-description="3-day event with 100+ speakers and 2,000 attendees">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="conference">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/400x300/5f27cd/ffffff?text=Business+Summit" alt="Business Summit" class="gallery-image">
+                        <div class="video-play" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Global Business Summit</h4>
+                            <p>International business leaders gathering</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Wedding Event -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wedding">
+                    <img src="https://via.placeholder.com/400x300/ff9f43/ffffff?text=Luxury+Wedding" alt="Luxury Wedding" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Luxury Destination Wedding</h4>
+                            <p>Emily & James's tropical paradise celebration</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/ff9f43/ffffff?text=Luxury+Wedding" data-title="Luxury Destination Wedding" data-description="Emily & James's tropical paradise celebration with 150 guests">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Additional Corporate Event -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="corporate">
+                    <img src="https://via.placeholder.com/400x300/00d2d3/ffffff?text=Team+Building" alt="Team Building" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Corporate Team Building</h4>
+                            <p>Interactive activities for company cohesion</p>
+                        </div>
+                    </div>
+                    <div class="gallery-zoom" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="https://via.placeholder.com/800x600/00d2d3/ffffff?text=Team+Building" data-title="Corporate Team Building" data-description="Interactive activities for company cohesion with 100 employees">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <button id="loadMore" class="btn btn-primary btn-lg">Load More Events</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-text">Events Organized</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-text">Weddings Planned</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-text">Corporate Events</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-text">Concerts & Festivals</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>Ready to Create Your Perfect Event?</h2>
+                    <p class="lead mb-4">Let us turn your vision into an unforgettable experience. Contact us today to start planning.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg me-3">Get In Touch</a>
+                    <a href="services.html" class="btn btn-outline-primary btn-lg">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>EventPro</h5>
+                    <p>Professional event management services for all occasions. We make your events memorable and stress-free.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Events</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="event-grid.html">All Events</a></li>
+                        <li><a href="event-list.html">Event List</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Ameerpet, Hyderabad, Telangana  500016</li>
+                        <li><i class="fas fa-phone me-2"></i>+1 234 567 8900</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@eventpro.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Event. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy-policy.html">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <img src="" alt="" class="lightbox-image" id="lightboxImage">
+                    <div class="lightbox-content">
+                        <h4 id="lightboxTitle"></h4>
+                        <p id="lightboxDescription"></p>
+                    </div>
+                </div>
+                <div class="lightbox-nav">
+                    <button class="lightbox-btn" id="prevImage"><i class="fas fa-chevron-left"></i></button>
+                    <button class="lightbox-btn" id="nextImage"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Event Highlights</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Event Highlights" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Global JS -->
+    <script src="js/global.js"></script>
+    <script>
+        // Gallery Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Lightbox functionality
+            const imageModal = document.getElementById('imageModal');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDescription = document.getElementById('lightboxDescription');
+            const zoomButtons = document.querySelectorAll('.gallery-zoom');
+            
+            zoomButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const imageSrc = this.getAttribute('data-image');
+                    const title = this.getAttribute('data-title');
+                    const description = this.getAttribute('data-description');
+                    
+                    lightboxImage.src = imageSrc;
+                    lightboxTitle.textContent = title;
+                    lightboxDescription.textContent = description;
+                });
+            });
+            
+            // Load More functionality
+            const loadMoreButton = document.getElementById('loadMore');
+            let visibleItems = 6;
+            
+            // Initially hide items beyond the first 6
+            galleryItems.forEach((item, index) => {
+                if (index >= visibleItems) {
+                    item.style.display = 'none';
+                }
+            });
+            
+            loadMoreButton.addEventListener('click', function() {
+                visibleItems += 6;
+                
+                galleryItems.forEach((item, index) => {
+                    if (index < visibleItems) {
+                        item.style.display = 'block';
+                    }
+                });
+                
+                // Hide button if all items are visible
+                if (visibleItems >= galleryItems.length) {
+                    loadMoreButton.style.display = 'none';
+                }
+            });
+            
+            // Image navigation in lightbox
+            const prevButton = document.getElementById('prevImage');
+            const nextButton = document.getElementById('nextImage');
+            let currentImageIndex = 0;
+            
+            // Set up image navigation
+            zoomButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    currentImageIndex = index;
+                });
+            });
+            
+            prevButton.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex - 1 + zoomButtons.length) % zoomButtons.length;
+                const button = zoomButtons[currentImageIndex];
+                lightboxImage.src = button.getAttribute('data-image');
+                lightboxTitle.textContent = button.getAttribute('data-title');
+                lightboxDescription.textContent = button.getAttribute('data-description');
+            });
+            
+            nextButton.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex + 1) % zoomButtons.length;
+                const button = zoomButtons[currentImageIndex];
+                lightboxImage.src = button.getAttribute('data-image');
+                lightboxTitle.textContent = button.getAttribute('data-title');
+                lightboxDescription.textContent = button.getAttribute('data-description');
+            });
+        });
+    </script>
+</body>
+</html>

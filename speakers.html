@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Speakers - EventPro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .speakers-hero {
+            background: linear-gradient(rgba(78, 84, 200, 0.8), rgba(143, 148, 251, 0.8)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .speakers-section {
+            padding: 80px 0;
+        }
+        
+        .speaker-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+            text-align: center;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .speaker-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+        }
+        
+        .speaker-social {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .speaker-card:hover .speaker-social {
+            opacity: 1;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .speaker-content {
+            padding: 25px;
+        }
+        
+        .speaker-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .speaker-title {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .speaker-company {
+            color: var(--gray-color);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .speaker-bio {
+            color: var(--gray-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .speaker-expertise {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .expertise-tag {
+            background: rgba(78, 84, 200, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .speaker-featured {
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .speakers-filters {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .filter-group {
+            margin-bottom: 20px;
+        }
+        
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        .filter-group label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-tag {
+            background: var(--light-color);
+            color: var(--dark-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-tag.active, .filter-tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .keynote-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            margin: 80px 0;
+            border-radius: 20px;
+        }
+        
+        .keynote-speaker {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .keynote-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .keynote-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .speaker-modal-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        .modal-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .speaker-image {
+                height: 250px;
+            }
+            
+            .keynote-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .filter-tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-calendar-alt me-2"></i>EventPro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="event-grid.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="speakers.html">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="speakers-hero">
+        <div class="container">
+            <h1>Featured Speakers</h1>
+            <p class="lead">Meet the industry experts and thought leaders who inspire our events</p>
+        </div>
+    </section>
+
+    <!-- Speakers Content -->
+    <section class="speakers-section">
+        <div class="container">
+            <!-- Speakers Filters -->
+            <div class="speakers-filters">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="filter-group">
+                            <label>Expertise Areas</label>
+                            <div class="filter-tags">
+                                <div class="filter-tag active" data-filter="all">All</div>
+                                <div class="filter-tag" data-filter="technology">Technology</div>
+                                <div class="filter-tag" data-filter="leadership">Leadership</div>
+                                <div class="filter-tag" data-filter="marketing">Marketing</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="filter-group">
+                            <label>Industry</label>
+                            <div class="filter-tags">
+                                <div class="filter-tag active" data-industry="all">All</div>
+                                <div class="filter-tag" data-industry="tech">Tech</div>
+                                <div class="filter-tag" data-industry="business">Business</div>
+                                <div class="filter-tag" data-industry="creative">Creative</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="filter-group">
+                            <label>Search Speakers</label>
+                            <div class="search-box">
+                                <input type="text" class="form-control" placeholder="Search by name or expertise...">
+                                <button type="button"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Keynote Speaker -->
+            <div class="keynote-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4">
+                            <div class="keynote-speaker">
+                                <img src="https://via.placeholder.com/200x200" alt="Dr. Sarah Chen" class="keynote-image">
+                                <div class="keynote-badge">Featured Keynote Speaker</div>
+                                <h2>Dr. Sarah Chen</h2>
+                                <p class="lead">AI Research Director & Technology Futurist</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3>About Our Keynote Speaker</h3>
+                            <p class="mb-4">Dr. Sarah Chen is a renowned AI researcher and technology futurist with over 15 years of experience in artificial intelligence and machine learning. Her groundbreaking work has been featured in leading tech publications and she's advised Fortune 500 companies on digital transformation.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check me-2"></i> PhD in Computer Science from MIT</li>
+                                        <li><i class="fas fa-check me-2"></i> Former Google AI Research Lead</li>
+                                        <li><i class="fas fa-check me-2"></i> Author of "The AI Revolution"</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check me-2"></i> TED Talk with 5M+ views</li>
+                                        <li><i class="fas fa-check me-2"></i> Forbes 30 Under 30 Honoree</li>
+                                        <li><i class="fas fa-check me-2"></i> 50+ Published Research Papers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <a href="#speaker-modal-1" class="btn btn-light me-3" data-bs-toggle="modal">View Full Profile</a>
+                                <a href="booking.html" class="btn btn-outline-light">Book for Event</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speakers Grid -->
+            <div class="row">
+                <!-- Speaker 1 -->
+                <div class="col-lg-4 col-md-6 speaker-item" data-expertise="technology leadership" data-industry="tech">
+                    <div class="speaker-card speaker-featured">
+                        <div class="featured-badge">Featured</div>
+                        <img src="https://via.placeholder.com/400x300" alt="Michael Rodriguez" class="speaker-image">
+                        <div class="speaker-social">
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-globe"></i></a>
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Michael Rodriguez</h3>
+                            <div class="speaker-title">Cybersecurity Expert</div>
+                            <div class="speaker-company">SecureTech Solutions</div>
+                            <p class="speaker-bio">Specializes in enterprise security and threat intelligence with 12+ years of experience protecting Fortune 500 companies.</p>
+                            <div class="speaker-expertise">
+                                <span class="expertise-tag">Cybersecurity</span>
+                                <span class="expertise-tag">Enterprise Security</span>
+                                <span class="expertise-tag">Threat Intelligence</span>
+                            </div>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#speaker-modal-2" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal">View Profile</a>
+                                <a href="contact.html" class="btn btn-sm btn-primary">Book Speaker</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="col-lg-4 col-md-6 speaker-item" data-expertise="leadership marketing" data-industry="business">
+                    <div class="speaker-card">
+                        <img src="https://via.placeholder.com/400x300" alt="Emily Watson" class="speaker-image">
+                        <div class="speaker-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-globe"></i></a>
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Emily Watson</h3>
+                            <div class="speaker-title">Blockchain Architect</div>
+                            <div class="speaker-company">Decentral Labs</div>
+                            <p class="speaker-bio">Pioneer in decentralized applications and smart contracts, with expertise in blockchain implementation and strategy.</p>
+                            <div class="speaker-expertise">
+                                <span class="expertise-tag">Blockchain</span>
+                                <span class="expertise-tag">Smart Contracts</span>
+                                <span class="expertise-tag">Web3</span>
+                            </div>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#speaker-modal-3" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal">View Profile</a>
+                                <a href="contact.html" class="btn btn-sm btn-primary">Book Speaker</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="col-lg-4 col-md-6 speaker-item" data-expertise="technology" data-industry="tech">
+                    <div class="speaker-card">
+                        <img src="https://via.placeholder.com/400x300" alt="David Kim" class="speaker-image">
+                        <div class="speaker-social">
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-globe"></i></a>
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">David Kim</h3>
+                            <div class="speaker-title">Cloud Architecture Lead</div>
+                            <div class="speaker-company">CloudScale Inc.</div>
+                            <p class="speaker-bio">Expert in cloud infrastructure and scalable systems design with certifications in AWS, Azure, and Google Cloud.</p>
+                            <div class="speaker-expertise">
+                                <span class="expertise-tag">Cloud Computing</span>
+                                <span class="expertise-tag">DevOps</span>
+                                <span class="expertise-tag">Infrastructure</span>
+                            </div>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#speaker-modal-4" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal">View Profile</a>
+                                <a href="contact.html" class="btn btn-sm btn-primary">Book Speaker</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 4 -->
+                <div class="col-lg-4 col-md-6 speaker-item" data-expertise="leadership" data-industry="business">
+                    <div class="speaker-card">
+                        <img src="https://via.placeholder.com/400x300" alt="Jennifer Lopez" class="speaker-image">
+                        <div class="speaker-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-globe"></i></a>
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Jennifer Lopez</h3>
+                            <div class="speaker-title">Digital Marketing Director</div>
+                            <div class="speaker-company">Growth Marketing Co.</div>
+                            <p class="speaker-bio">Helps businesses scale through data-driven marketing strategies and customer acquisition optimization.</p>
+                            <div class="speaker-expertise">
+                                <span class="expertise-tag">Digital Marketing</span>
+                                <span class="expertise-tag">Growth Strategy</span>
+                                <span class="expertise-tag">SEO</span>
+                            </div>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#speaker-modal-5" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal">View Profile</a>
+                                <a href="contact.html" class="btn btn-sm btn-primary">Book Speaker</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 5 -->
+                <div class="col-lg-4 col-md-6 speaker-item" data-expertise="technology leadership" data-industry="tech">
+                    <div class="speaker-card speaker-featured">
+                        <div class="featured-badge">Popular</div>
+                        <img src="https://via.placeholder.com/400x300" alt="Robert Johnson" class="speaker-image">
+                        <div class="speaker-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-medium"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-globe"></i></a>
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Robert Johnson</h3>
+                            <div class="speaker-title">Data Science Lead</div>
+                            <div class="speaker-company">DataInsight Corp</div>
+                            <p class="speaker-bio">Transforms raw data into actionable insights using advanced analytics and machine learning techniques.</p>
+                            <div class="speaker-expertise">
+                                <span class="expertise-tag">Data Science</span>
+                                <span class="expertise-tag">Machine Learning</span>
+                                <span class="expertise-tag">Analytics</span>
+                            </div>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#speaker-modal-6" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal">View Profile</a>
+                                <a href="contact.html" class="btn btn-sm btn-primary">Book Speaker</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 6 -->
+                <div class="col-lg-4 col-md-6 speaker-item" data-expertise="marketing" data-industry="creative">
+                    <div class="speaker-card">
+                        <img src="https://via.placeholder.com/400x300" alt="Amanda Smith" class="speaker-image">
+                        <div class="speaker-social">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-globe"></i></a>
+                        </div>
+                        <div class="speaker-content">
+                            <h3 class="speaker-name">Amanda Smith</h3>
+                            <div class="speaker-title">Creative Director</div>
+                            <div class="speaker-company">Design Studio X</div>
+                            <p class="speaker-bio">Award-winning creative director specializing in brand storytelling and visual communication strategies.</p>
+                            <div class="speaker-expertise">
+                                <span class="expertise-tag">Brand Strategy</span>
+                                <span class="expertise-tag">Creative Direction</span>
+                                <span class="expertise-tag">Visual Design</span>
+                            </div>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#speaker-modal-7" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal">View Profile</a>
+                                <a href="contact.html" class="btn btn-sm btn-primary">Book Speaker</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Become a Speaker CTA -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="text-center bg-light p-5 rounded-3">
+                        <h3>Interested in Speaking at Our Events?</h3>
+                        <p class="mb-4">Join our roster of industry experts and share your knowledge with our audience.</p>
+                        <a href="contact.html" class="btn btn-primary btn-lg">Apply to Become a Speaker</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>EventPro</h5>
+                    <p>Professional event management services for all occasions. We make your events memorable and stress-free.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Events</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="event-grid.html">All Events</a></li>
+                        <li><a href="event-list.html">Event List</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Ameerpet, Hyderabad, Telangana  500016</li>
+                        <li><i class="fas fa-phone me-2"></i>+1 234 567 8900</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@eventpro.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Event. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy-policy.html">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Speaker Modals -->
+    
+    <!-- Modal 1: Dr. Sarah Chen -->
+    <div class="modal fade" id="speaker-modal-1" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Speaker Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <img src="https://via.placeholder.com/150x150" alt="Dr. Sarah Chen" class="speaker-modal-image">
+                        <h3>Dr. Sarah Chen</h3>
+                        <p class="text-primary mb-2">AI Research Director & Technology Futurist</p>
+                        <p class="text-muted">TechVision Labs</p>
+                    </div>
+                    
+                    <div class="modal-social">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-medium"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-globe"></i></a>
+                    </div>
+                    
+                    <h5>About</h5>
+                    <p>Dr. Sarah Chen is a leading AI researcher and technology futurist with over 15 years of experience in artificial intelligence and machine learning. Her groundbreaking work has been featured in leading tech publications and she's advised Fortune 500 companies on digital transformation strategies.</p>
+                    
+                    <h5>Expertise Areas</h5>
+                    <div class="speaker-expertise mb-3">
+                        <span class="expertise-tag">Artificial Intelligence</span>
+                        <span class="expertise-tag">Machine Learning</span>
+                        <span class="expertise-tag">Digital Transformation</span>
+                        <span class="expertise-tag">Technology Strategy</span>
+                    </div>
+                    
+                    <h5>Speaking Topics</h5>
+                    <ul>
+                        <li>The Future of AI in Business</li>
+                        <li>Ethical AI Implementation</li>
+                        <li>Machine Learning for Competitive Advantage</li>
+                        <li>Digital Transformation Roadmaps</li>
+                    </ul>
+                    
+                    <h5>Previous Engagements</h5>
+                    <ul>
+                        <li>TED Talk: "The AI Revolution" (5M+ views)</li>
+                        <li>Google I/O Keynote Speaker</li>
+                        <li>World Economic Forum Panelist</li>
+                        <li>MIT Technology Review Conference</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="contact.html" class="btn btn-primary">Book This Speaker</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Michael Rodriguez -->
+    <div class="modal fade" id="speaker-modal-2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Speaker Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <img src="https://via.placeholder.com/150x150" alt="Michael Rodriguez" class="speaker-modal-image">
+                        <h3>Michael Rodriguez</h3>
+                        <p class="text-primary mb-2">Cybersecurity Expert</p>
+                        <p class="text-muted">SecureTech Solutions</p>
+                    </div>
+                    
+                    <div class="modal-social">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-globe"></i></a>
+                    </div>
+                    
+                    <h5>About</h5>
+                    <p>Michael Rodriguez is a cybersecurity expert with 12+ years of experience protecting Fortune 500 companies from digital threats. He specializes in enterprise security architecture and threat intelligence, helping organizations build robust security frameworks.</p>
+                    
+                    <h5>Expertise Areas</h5>
+                    <div class="speaker-expertise mb-3">
+                        <span class="expertise-tag">Cybersecurity</span>
+                        <span class="expertise-tag">Enterprise Security</span>
+                        <span class="expertise-tag">Threat Intelligence</span>
+                        <span class="expertise-tag">Risk Management</span>
+                    </div>
+                    
+                    <h5>Speaking Topics</h5>
+                    <ul>
+                        <li>Modern Cybersecurity Threats</li>
+                        <li>Building Enterprise Security Frameworks</li>
+                        <li>Incident Response Planning</li>
+                        <li>Security Awareness Training</li>
+                    </ul>
+                    
+                    <h5>Certifications</h5>
+                    <ul>
+                        <li>Certified Information Systems Security Professional (CISSP)</li>
+                        <li>Certified Ethical Hacker (CEH)</li>
+                        <li>CompTIA Security+</li>
+                        <li>GIAC Security Essentials (GSEC)</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="contact.html" class="btn btn-primary">Book This Speaker</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add similar modals for other speakers... -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Global JS -->
+    <script src="js/global.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Speaker filtering functionality
+            const filterTags = document.querySelectorAll('.filter-tag');
+            const speakerItems = document.querySelectorAll('.speaker-item');
+            const searchInput = document.querySelector('.search-box input');
+            
+            // Filter by expertise and industry
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    const filterType = this.parentElement.querySelector('label').textContent.toLowerCase();
+                    const filterValue = this.getAttribute(filterType === 'expertise areas' ? 'data-filter' : 'data-industry');
+                    
+                    // Update active state
+                    this.parentElement.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    filterSpeakers();
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', filterSpeakers);
+            
+            function filterSpeakers() {
+                const expertiseFilter = document.querySelector('.filter-tag[data-filter].active').getAttribute('data-filter');
+                const industryFilter = document.querySelector('.filter-tag[data-industry].active').getAttribute('data-industry');
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                speakerItems.forEach(item => {
+                    const expertise = item.getAttribute('data-expertise');
+                    const industry = item.getAttribute('data-industry');
+                    const speakerName = item.querySelector('.speaker-name').textContent.toLowerCase();
+                    const speakerBio = item.querySelector('.speaker-bio').textContent.toLowerCase();
+                    
+                    const matchesExpertise = expertiseFilter === 'all' || expertise.includes(expertiseFilter);
+                    const matchesIndustry = industryFilter === 'all' || industry === industryFilter;
+                    const matchesSearch = searchTerm === '' || 
+                        speakerName.includes(searchTerm) || 
+                        speakerBio.includes(searchTerm);
+                    
+                    if (matchesExpertise && matchesIndustry && matchesSearch) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Initialize speaker filtering
+            filterSpeakers();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - EventPro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-calendar-alt me-2"></i>EventPro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="event-grid.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i>John Doe
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="profile.html">My Profile</a></li>
+                            <li><a class="dropdown-item" href="booking.html">My Bookings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="profile-hero">
+        <div class="container">
+            <h1>My Profile</h1>
+            <p class="lead">Manage your account and event bookings</p>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-4 mb-4">
+                    <div class="profile-sidebar">
+                        <img src="https://via.placeholder.com/150" alt="Profile" class="profile-avatar">
+                        <h4 class="text-center mb-1">John Doe</h4>
+                        <p class="text-center text-muted mb-4">Premium Member</p>
+                        
+                        <div class="nav flex-column nav-pills" id="profileTabs">
+                            <button class="nav-link active" data-tab="overview">
+                                <i class="fas fa-chart-pie me-2"></i>Overview
+                            </button>
+                            <button class="nav-link" data-tab="personal">
+                                <i class="fas fa-user me-2"></i>Personal Info
+                            </button>
+                            <button class="nav-link" data-tab="events">
+                                <i class="fas fa-calendar me-2"></i>My Events
+                            </button>
+                            <button class="nav-link" data-tab="notifications">
+                                <i class="fas fa-bell me-2"></i>Notifications
+                            </button>
+                            <button class="nav-link" data-tab="settings">
+                                <i class="fas fa-cog me-2"></i>Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <div class="profile-content">
+                        <!-- Overview Tab -->
+                        <div id="overview" class="tab-pane active">
+                            <h3 class="mb-4">Dashboard Overview</h3>
+                            
+                            <div class="row mb-5">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            <h2 class="text-primary">3</h2>
+                                            <p class="mb-0">Upcoming Events</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            <h2 class="text-success">12</h2>
+                                            <p class="mb-0">Past Events</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            <h2 class="text-warning">2</h2>
+                                            <p class="mb-0">Pending Actions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mb-3">Recent Events</h5>
+                            <div class="event-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6 class="mb-0">Sarah & Michael's Wedding</h6>
+                                    <span class="event-status status-upcoming">Upcoming</span>
+                                </div>
+                                <p class="text-muted mb-2"><i class="fas fa-calendar me-2"></i>October 15, 2023 | 4:00 PM</p>
+                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt me-2"></i>Grand Garden Venue, New York</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Wedding</span>
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-primary me-2">View Details</button>
+                                        <button class="btn btn-sm btn-outline-secondary">Message Planner</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6 class="mb-0">Tech Innovators Conference</h6>
+                                    <span class="event-status status-completed">Completed</span>
+                                </div>
+                                <p class="text-muted mb-2"><i class="fas fa-calendar me-2"></i>September 22, 2023 | 9:00 AM</p>
+                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt me-2"></i>Convention Center, San Francisco</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-info">Conference</span>
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-primary me-2">View Photos</button>
+                                        <button class="btn btn-sm btn-outline-success">Leave Review</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Personal Info Tab -->
+                        <div id="personal" class="tab-pane">
+                            <h3 class="mb-4">Personal Information</h3>
+                            
+                            <form class="needs-validation" novalidate>
+                                <div class="form-card">
+                                    <h5 class="mb-3">Basic Information</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">First Name *</label>
+                                                <input type="text" class="form-control" value="John" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">Last Name *</label>
+                                                <input type="text" class="form-control" value="Doe" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">Email Address *</label>
+                                                <input type="email" class="form-control" value="john.doe@example.com" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" value="+1 (234) 567-8900">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-card">
+                                    <h5 class="mb-3">Address Information</h5>
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Street Address</label>
+                                        <input type="text" class="form-control" value="123 Main Street">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">City</label>
+                                                <input type="text" class="form-control" value="New York">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">State</label>
+                                                <input type="text" class="form-control" value="NY">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">ZIP Code</label>
+                                                <input type="text" class="form-control" value="10001">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-card">
+                                    <h5 class="mb-3">Change Password</h5>
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Current Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">New Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                        
+                        <!-- My Events Tab -->
+                        <div id="events" class="tab-pane">
+                            <h3 class="mb-4">My Events</h3>
+                            
+                            <div class="d-flex mb-4">
+                                <button class="btn btn-outline-primary active me-2">All Events</button>
+                                <button class="btn btn-outline-primary me-2">Upcoming</button>
+                                <button class="btn btn-outline-primary me-2">Past</button>
+                                <button class="btn btn-outline-primary">Cancelled</button>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6 class="mb-0">Sarah & Michael's Wedding</h6>
+                                    <span class="event-status status-upcoming">Upcoming</span>
+                                </div>
+                                <p class="text-muted mb-2"><i class="fas fa-calendar me-2"></i>October 15, 2023 | 4:00 PM</p>
+                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Grand Garden Venue, New York</p>
+                                <p class="mb-3">Beautiful outdoor wedding ceremony and reception for 150 guests with garden theme.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-primary me-2">Wedding</span>
+                                        <span class="badge bg-success">Confirmed</span>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-primary me-2">View Details</button>
+                                        <button class="btn btn-sm btn-outline-warning">Reschedule</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6 class="mb-0">Tech Innovators Conference</h6>
+                                    <span class="event-status status-completed">Completed</span>
+                                </div>
+                                <p class="text-muted mb-2"><i class="fas fa-calendar me-2"></i>September 22, 2023 | 9:00 AM - 5:00 PM</p>
+                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Convention Center, San Francisco</p>
+                                <p class="mb-3">Annual technology conference with 500 attendees, 20 speakers, and exhibition hall.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-info me-2">Conference</span>
+                                        <span class="badge bg-success">Completed</span>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-primary me-2">View Photos</button>
+                                        <button class="btn btn-sm btn-outline-success">Download Invoice</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6 class="mb-0">Product Launch Party</h6>
+                                    <span class="event-status status-cancelled">Cancelled</span>
+                                </div>
+                                <p class="text-muted mb-2"><i class="fas fa-calendar me-2"></i>August 30, 2023 | 7:00 PM</p>
+                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Downtown Event Space, Chicago</p>
+                                <p class="mb-3">Cancelled due to unforeseen circumstances. Full refund processed.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-secondary me-2">Corporate</span>
+                                        <span class="badge bg-danger">Cancelled</span>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-secondary">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Notifications Tab -->
+                        <div id="notifications" class="tab-pane">
+                            <h3 class="mb-4">Notifications</h3>
+                            
+                            <div class="notification-item notification-unread">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">Event Update: Sarah & Michael's Wedding</h6>
+                                        <p class="mb-1">Your event planner has updated the timeline for your upcoming wedding.</p>
+                                        <small class="text-muted">2 hours ago</small>
+                                    </div>
+                                    <span class="badge bg-primary">New</span>
+                                </div>
+                            </div>
+                            
+                            <div class="notification-item">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">Payment Received</h6>
+                                        <p class="mb-1">Your payment of $2,500 for the Tech Conference has been processed successfully.</p>
+                                        <small class="text-muted">1 day ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="notification-item">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="mb-1">New Message from Planner</h6>
+                                        <p class="mb-1">You have a new message from your event planner regarding venue options.</p>
+                                        <small class="text-muted">3 days ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <button class="btn btn-outline-primary">Load More Notifications</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Tab -->
+                        <div id="settings" class="tab-pane">
+                            <h3 class="mb-4">Account Settings</h3>
+                            
+                            <div class="form-card">
+                                <h5 class="mb-3">Notification Preferences</h5>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                    <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="smsNotifications">
+                                    <label class="form-check-label" for="smsNotifications">SMS Notifications</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="eventReminders" checked>
+                                    <label class="form-check-label" for="eventReminders">Event Reminders</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="promotionalEmails">
+                                    <label class="form-check-label" for="promotionalEmails">Promotional Emails</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-card">
+                                <h5 class="mb-3">Privacy Settings</h5>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="profileVisibility" checked>
+                                    <label class="form-check-label" for="profileVisibility">Make Profile Visible to Planners</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="eventVisibility">
+                                    <label class="form-check-label" for="eventVisibility">Show My Events in Gallery</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-card">
+                                <h5 class="mb-3">Danger Zone</h5>
+                                <p class="text-muted mb-3">Once you delete your account, there is no going back. Please be certain.</p>
+                                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                                    Delete Account
+                                </button>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between mt-4">
+                                <button class="btn btn-outline-secondary">Cancel</button>
+                                <button class="btn btn-primary">Save Settings</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delete Account Modal -->
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+                    <div class="form-group mb-3">
+                        <label class="form-label">Please type "DELETE" to confirm:</label>
+                        <input type="text" class="form-control" id="deleteConfirm">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete" disabled>Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>EventPro</h5>
+                    <p>Professional event management services for all occasions. We make your events memorable and stress-free.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Events</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="event-grid.html">All Events</a></li>
+                        <li><a href="event-list.html">Event List</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Ameerpet, Hyderabad, Telangana  500016</li>
+                        <li><i class="fas fa-phone me-2"></i>+1 234 567 8900</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@eventpro.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Event. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy-policy.html">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Global JS -->
+    <script src="js/global.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('[data-tab]');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and panes
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding pane
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Delete account confirmation
+            const deleteConfirm = document.getElementById('deleteConfirm');
+            const confirmDelete = document.getElementById('confirmDelete');
+            
+            deleteConfirm.addEventListener('input', function() {
+                confirmDelete.disabled = this.value !== 'DELETE';
+            });
+            
+            confirmDelete.addEventListener('click', function() {
+                showToast('Account deletion request submitted. We will contact you for confirmation.', 'info');
+                $('#deleteAccountModal').modal('hide');
+                deleteConfirm.value = '';
+                this.disabled = true;
+            });
+        });
+    </script>
+</body>
+</html>

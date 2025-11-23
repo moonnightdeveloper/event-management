@@ -1,0 +1,29 @@
+event-management/
+├── index.html (Home page)
+├── about.html
+├── services.html
+├── gallery.html
+├── blog.html
+├── blog-details.html
+├── speakers.html
+├── event-list.html
+├── event-grid.html
+├── event-detail.html
+├── faq.html
+├── booking.html
+├── contact.html
+├── 404.html
+├── coming-soon.html
+├── privacy-policy.html
+├── profile.html
+├── registration.html
+├── login.html
+├── logout.html
+├── css/
+│   ├── global.css
+│   └── responsive.css
+├── js/
+│   └── global.js
+└── assets/
+    ├── images/
+    └── icons/

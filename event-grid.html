@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Grid - EventPro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-calendar-alt me-2"></i>EventPro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="event-grid.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="events-hero">
+        <div class="container">
+            <h1>Upcoming Events</h1>
+            <p class="lead">Discover amazing events and experiences</p>
+        </div>
+    </section>
+
+    <!-- Events Content -->
+    <section class="events-section">
+        <div class="container">
+            <!-- View Toggle and Sort -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="view-toggle">
+                    <a href="event-list.html" class="view-toggle-btn">
+                        <i class="fas fa-list me-2"></i>List View
+                    </a>
+                    <a href="event-grid.html" class="view-toggle-btn active">
+                        <i class="fas fa-th me-2"></i>Grid View
+                    </a>
+                </div>
+                <div class="sort-options">
+                    <select class="form-select">
+                        <option>Sort by: Date</option>
+                        <option>Sort by: Name</option>
+                        <option>Sort by: Price</option>
+                        <option>Sort by: Popularity</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Events Grid -->
+            <div class="row">
+                <!-- Event 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Tech Conference" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">15</div>
+                            <div class="month">OCT</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Conference</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> New York</span>
+                            </div>
+                            <h3 class="event-title">Tech Conference 2023: The Future of Innovation</h3>
+                            <p class="event-excerpt">Join industry leaders for a day of inspiring talks and networking opportunities exploring the latest tech trends.</p>
+                            <div class="event-footer">
+                                <div class="event-price">$299</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Music Festival" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">22</div>
+                            <div class="month">OCT</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Concert</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> Los Angeles</span>
+                            </div>
+                            <h3 class="event-title">Summer Music Festival 2023</h3>
+                            <p class="event-excerpt">Experience an unforgettable night of music with top artists from around the world. Amazing atmosphere included.</p>
+                            <div class="event-footer">
+                                <div class="event-price">$149</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Business Summit" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">05</div>
+                            <div class="month">NOV</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Business Summit</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> Chicago</span>
+                            </div>
+                            <h3 class="event-title">Global Business Summit 2023</h3>
+                            <p class="event-excerpt">Network with business leaders and learn growth strategies in today's competitive market environment.</p>
+                            <div class="event-footer">
+                                <div class="event-price">$399</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Digital Marketing" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">12</div>
+                            <div class="month">NOV</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Workshop</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> Online</span>
+                            </div>
+                            <h3 class="event-title">Digital Marketing Masterclass</h3>
+                            <p class="event-excerpt">Learn advanced digital marketing strategies from industry experts with hands-on exercises and case studies.</p>
+                            <div class="event-footer">
+                                <div class="event-price">$99</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Networking" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">18</div>
+                            <div class="month">NOV</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Networking</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> Miami</span>
+                            </div>
+                            <h3 class="event-title">Startup Founder Networking Night</h3>
+                            <p class="event-excerpt">Connect with fellow entrepreneurs, investors, and industry experts to expand your professional network.</p>
+                            <div class="event-footer">
+                                <div class="event-price">Free</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="AI Summit" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">25</div>
+                            <div class="month">NOV</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Conference</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> San Francisco</span>
+                            </div>
+                            <h3 class="event-title">AI & Machine Learning Summit</h3>
+                            <p class="event-excerpt">Explore the latest developments in artificial intelligence with technical sessions and practical applications.</p>
+                            <div class="event-footer">
+                                <div class="event-price">$349</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Leadership" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">02</div>
+                            <div class="month">DEC</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Workshop</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> Boston</span>
+                            </div>
+                            <h3 class="event-title">Leadership Development Workshop</h3>
+                            <p class="event-excerpt">Enhance your leadership skills with practical techniques and strategies from experienced executive coaches.</p>
+                            <div class="event-footer">
+                                <div class="event-price">$199</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Design Conference" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">09</div>
+                            <div class="month">DEC</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Conference</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> Seattle</span>
+                            </div>
+                            <h3 class="event-title">Design Thinking Conference 2023</h3>
+                            <p class="event-excerpt">Discover innovative design approaches and methodologies that drive business success and user satisfaction.</p>
+                            <div class="event-footer">
+                                <div class="event-price">$279</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-grid-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Health & Wellness" class="event-grid-image">
+                        <div class="event-date">
+                            <div class="day">16</div>
+                            <div class="month">DEC</div>
+                        </div>
+                        <div class="event-grid-content">
+                            <div class="event-meta">
+                                <span class="event-category">Wellness</span>
+                                <span class="event-location"><i class="fas fa-map-marker-alt"></i> Austin</span>
+                            </div>
+                            <h3 class="event-title">Health & Wellness Retreat</h3>
+                            <p class="event-excerpt">Rejuvenate your mind and body with yoga, meditation, and wellness workshops in a serene natural setting.</p>
+                            <div class="event-footer">
+                                <div class="event-price">$449</div>
+                                <div>
+                                    <a href="event-detail.html" class="btn btn-sm btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <nav aria-label="Events pagination">
+                <ul class="pagination events-pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>EventPro</h5>
+                    <p>Professional event management services for all occasions. We make your events memorable and stress-free.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Events</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="event-grid.html">All Events</a></li>
+                        <li><a href="event-list.html">Event List</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Ameerpet, Hyderabad, Telangana  500016</li>
+                        <li><i class="fas fa-phone me-2"></i>+1 234 567 8900</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@eventpro.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Event. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy-policy.html">Privacy Policy</a> | 
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Global JS -->
+    <script src="js/global.js"></script>
+</body>
+</html>

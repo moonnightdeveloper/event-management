@@ -1,0 +1,104 @@
+/* css/responsive.css */
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+    
+    .page-header {
+        padding: 80px 0 40px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .feature-card, .event-card, .testimonial-card {
+        margin-bottom: 20px;
+    }
+    
+    .newsletter-section .d-flex {
+        flex-direction: column;
+    }
+    
+    .newsletter-section .form-control {
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+    
+    .newsletter-section .btn {
+        border-radius: 8px;
+        width: 100%;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons .btn {
+        margin-bottom: 10px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    /* Add specific styles for large devices if needed */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* Add specific styles for extra large devices if needed */
+}
+
+/* Print styles */
+@media print {
+    .navbar, .hero-buttons, .footer, .back-to-top {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+}
