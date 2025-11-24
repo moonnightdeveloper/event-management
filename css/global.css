@@ -1306,28 +1306,11 @@ ul.infoGraphic {
     font-size: var(--font-size);
     display: flex;
     justify-content: center;
-    gap: 2rem 32px;
+    /* gap: 2rem 32px; */
     list-style: none;
     padding: 0;
 }
 
-/* ul.infoGraphic li {
-    position: relative;
-    width: 100%;
-    max-width: 25em;
-    background: white;
-    border-radius: 0.5em;
-    padding: 0.5em;
-    z-index: 1;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: var(--shadow1);
-}
-
-ul.infoGraphic li:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow2);
-} */
 
 .numberWrap {
     position: absolute;
@@ -1433,43 +1416,18 @@ ul.infoGraphic li:hover .coverWrap .numberCover {
 /* Icons */
 .icon {
     position: absolute;
-    font-size: 2rem;
+    font-size: 1rem;
     text-align: center;
-    top: -1.3em;
-    left: 50%;
+    top:-5rem;
+    left: 60%;
     transform: translatex(-50%);
 }
-
-.icon:before {
+.icon:before { 
     color: #666;
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-}
-
-.iconCodepen:before {
-    content: "\f1cb";
-}
-
-.iconSocial:before {
-    content: "\f08a";
-}
-
-.iconAirplane:before {
-    content: "\f1d9";
-}
-
-.iconMap:before {
-    content: "\f278";
-}
-
-.iconBulb:before {
-    content: "\f0eb";
-}
-
-.iconPeace:before {
-    content: "\f25b";
 }
 
 /* Process Controls */
@@ -1534,192 +1492,6 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     background: #eee;
 }
 
-/* Responsive Design for Process Section */
-@media (max-width: 768px) {
-    ul.infoGraphic {
-        gap: 1.5rem;
-    }
-
-    .content {
-        margin: 8em 1.5em 1em 7em;
-    }
-}
-
-@media (max-width: 480px) {
-    .process-section {
-        padding: 3rem 0;
-    }
-
-    .process-header h2 {
-        font-size: 2rem;
-    }
-
-    .process-subtitle {
-        font-size: 1rem;
-    }
-
-    .content {
-        margin: 8em 1em 1em 6em;
-    }
-}
-
-/*  */
-/* Registration Page */
-
-.registration-hero {
-    background: linear-gradient(rgba(78, 84, 200, 0.8), rgba(143, 148, 251, 0.8)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
-    color: white;
-    padding: 150px 0 80px;
-    text-align: center;
-}
-
-.registration-section {
-    padding: 80px 0;
-}
-
-.registration-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.registration-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 30px;
-    text-align: center;
-}
-
-.registration-body {
-    padding: 40px;
-}
-
-.progress-bar {
-    height: 6px;
-    background: #e9ecef;
-    border-radius: 3px;
-    margin-bottom: 30px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    width: 33%;
-    transition: width 0.3s ease;
-}
-
-.form-step {
-    display: none;
-}
-
-.form-step.active {
-    display: block;
-}
-
-.step-indicators {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.step-indicator {
-    text-align: center;
-    flex: 1;
-    position: relative;
-}
-
-.step-indicator:not(:last-child):after {
-    content: '';
-    position: absolute;
-    top: 15px;
-    right: -50%;
-    width: 100%;
-    height: 2px;
-    background: #e9ecef;
-    z-index: 1;
-}
-
-.step-number {
-    width: 30px;
-    height: 30px;
-    background: #e9ecef;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px;
-    font-weight: 600;
-    position: relative;
-    z-index: 2;
-}
-
-.step-indicator.active .step-number {
-    background: var(--primary-color);
-    color: white;
-}
-
-.step-indicator.completed .step-number {
-    background: var(--success-color);
-    color: white;
-}
-
-.step-indicator.completed .step-number:after {
-    content: '✓';
-}
-
-.step-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.form-navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.password-strength {
-    height: 5px;
-    background: #e9ecef;
-    border-radius: 3px;
-    margin-top: 5px;
-    overflow: hidden;
-}
-
-.strength-fill {
-    height: 100%;
-    width: 0;
-    transition: all 0.3s ease;
-}
-
-.strength-weak {
-    background: var(--danger-color);
-    width: 33%;
-}
-
-.strength-medium {
-    background: var(--warning-color);
-    width: 66%;
-}
-
-.strength-strong {
-    background: var(--success-color);
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .registration-body {
-        padding: 25px;
-    }
-
-    .step-indicator:not(:last-child):after {
-        right: -40%;
-    }
-}
 
 /* logout Page  */
 
