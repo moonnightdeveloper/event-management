@@ -1,7 +1,9 @@
 # Event-Management
 Event management is the process of planning and executing events, from large-scale conferences to personal parties, 
 involving everything from budgeting and venue selection to marketing and post-event analysis.
-It requires organizing all aspects to ensure an event runs smoothly and achieves its objectives
+It requires organizing all aspects to ensure an event runs smoothly and achieves its objectives.
+
+![Event-Management](./event.JPG)
 
 # Event-Management - **[LIVE DEMO](https://moonnightdeveloper.github.io/event-management/index.html)**.
 
